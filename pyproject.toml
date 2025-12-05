@@ -1,0 +1,23 @@
+[project]
+name = "dmd"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "Søren Godbersen",email = "sgn@systematic.com"}
+]
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "dash (>=3.3.0,<4.0.0)",
+    "pandas (>=2.3.3,<3.0.0)",
+    "openpyxl (>=3.1.5,<4.0.0)",
+    "dash-bootstrap-components (>=2.0.4,<3.0.0)",
+    "dash-ag-grid (>=32.3.2,<33.0.0)"
+]
+
+[tool.poetry]
+packages = [{include = "dmd", from = "src"}]
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
