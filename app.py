@@ -270,14 +270,13 @@ def render_tab_content(active_tab, selected_years):
 
         # ========== 1. RADAR: AVERAGE SCORES OVERALL ==========
         radar_df = pd.DataFrame({
-            "Metric": ["Flavour", "Funk", "Design", "Worth", "Value4Coin", "Total"],
+            "Metric": ["Flavour", "Funk", "Design", "Worth", "Value4Coin"],
             "Score": [
                 dff["Flavour (0-10)"].mean(),
                 dff["Funk (0-5)"].mean(),
                 dff["Design (0-5)"].mean(),
                 dff["Worth (0-10)"].mean(),
                 dff["Value4Coin (0-10)"].mean(),
-                dff["Total"].mean()
             ]
         })
 
@@ -294,7 +293,7 @@ def render_tab_content(active_tab, selected_years):
         # ========== 2. RADAR: BY BEER TYPE ==========
         type_means = (
             dff.groupby("Type")[["Flavour (0-10)", "Funk (0-5)", "Design (0-5)",
-                                 "Worth (0-10)", "Value4Coin (0-10)", "Total"]]
+                                 "Worth (0-10)", "Value4Coin (0-10)"]]
             .mean()
             .reset_index()
         )
@@ -313,7 +312,7 @@ def render_tab_content(active_tab, selected_years):
         # ========== 3. CORRELATION HEATMAP ==========
         corr = dff[[
             "Flavour (0-10)", "Funk (0-5)", "Design (0-5)",
-            "Worth (0-10)", "Value4Coin (0-10)", "Total"
+            "Worth (0-10)", "Value4Coin (0-10)",
         ]].corr()
 
         fig_corr = px.imshow(
@@ -329,7 +328,7 @@ def render_tab_content(active_tab, selected_years):
             dff,
             dimensions=[
                 "Flavour (0-10)", "Funk (0-5)", "Worth (0-10)",
-                "Value4Coin (0-10)", "Total"
+                "Value4Coin (0-10)"
             ],
             color="Type",
             color_discrete_map=color_map,
