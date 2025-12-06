@@ -34,6 +34,8 @@ app = Dash(
     title="DMD: Food & Beer Club Dashboard",
     suppress_callback_exceptions=True
 )
+server = app.server
+
 
 # ---------- Layout ----------
 app.layout = html.Div([

@@ -1,9 +1,9 @@
 [project]
-name = "dmd"
+name = "dmd-dashboard"
 version = "0.1.0"
-description = ""
+description = "DMD Beer Club Dashboard"
 authors = [
-    {name = "Søren Godbersen",email = "sgn@systematic.com"}
+    { name = "Søren Godbersen", email = "sgn@systematic.com" }
 ]
 readme = "README.md"
 requires-python = ">=3.12"
@@ -17,7 +17,7 @@ dependencies = [
 ]
 
 [tool.poetry]
-packages = [{include = "dmd", from = "src"}]
+package-mode = false   # ← THIS IS THE SOLUTION
 
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]
