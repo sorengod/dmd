@@ -16,8 +16,8 @@
 
 /* Make logo HUGE */
 #splash-logo {
-    width: 70%;          /* increased from 40% → 70% */
-    max-width: 900px;    /* increased max size */
+    width: 60%;          /* increased from 40% → 70% */
+    max-width: 800px;    /* increased max size */
     opacity: 1;
     transform: scale(1);
     transition: transform 2s ease-out;
